@@ -17,7 +17,6 @@ public class LineItem {
     private BigDecimal unitPrice;
     @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "invoice_id")
     private Invoice invoice;
 
     public LineItem() {

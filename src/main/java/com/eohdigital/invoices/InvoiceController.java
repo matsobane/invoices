@@ -17,7 +17,7 @@ public class InvoiceController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void addInvoice(@RequestBody Invoice invoice){
-        Invoice saved = this.invoiceRepository.save(invoice);
+        this.invoiceRepository.save(invoice);
     }
 
     @GetMapping

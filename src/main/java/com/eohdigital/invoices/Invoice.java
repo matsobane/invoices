@@ -18,7 +18,8 @@ public class Invoice {
     private String client;
     private Long vatRate;
     private Date invoiceDate;
-    @OneToMany(fetch = FetchType.EAGER,targetEntity = LineItem.class,cascade = CascadeType.ALL,mappedBy = "invoice")
+    @OneToMany(fetch = FetchType.EAGER,targetEntity = LineItem.class,cascade = CascadeType.ALL,orphanRemoval = true)
+    @JoinColumn(name = "invoice_id")
     private List<LineItem> lineItems = new ArrayList<>();
 
     public Invoice() {
